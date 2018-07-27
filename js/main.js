@@ -11,6 +11,13 @@
 // method should also break the username from before the `@` symbol in the
 // `email` value and use that to store on a `this.username` property.
 
+class Person{
+    constructor(name,email);
+    this.name = name;
+    this.email = email;
+    this.username = email.split('@')[0];
+}
+
 // TODO: Create another class that extends the `Person` class called `Student`.
 // The `Student` class should add a line to the `constructor()` method that sets
 // the property `this.attendance` to an empty Array (`[ ]`). The `attendance`
@@ -19,6 +26,11 @@
 // `constructor()` method from the `Person` class.)
 //
 
+class Student extends Person{
+    constructor(name,email){
+    super(name,email);
+    this.attendance=[];
+}
 
 // TODO: Create another method on the `Student` class called `calculateAttendance`.
 // This method should give a percentage of how many days the student was present.
@@ -109,12 +121,20 @@ class Course {
 //
 // TODO: Prompt the user for the `courseCode` (the number/code of the course, like "WATS 3000").
 
+let courseCode = prompt('Enter the course number:','TEST 3000');
+
 // TODO: Prompt the user for the `courseTitle` (the name of the course, like "Introduction to JavaScript").
+
+let courseTitle = prompt('Enter the name of the course:','Intro to JavaScript');
 
 // TODO: Prompt the user for the  `courseDescription` (the descriptive summary of the course).
 
+let courseDescription = prompt('Enter a description of the course:','Easy A for students');
+
 // Create a new `Course` object instance called `myCourse` using the three data points just collected from the user.
 // TODO: Add in the values for the information supplied by the user above.
+
+let myCourse = new Course(courseCode,courseTitle,courseDescription);
 
 
 ///////////////////////////////////////////////////
