@@ -12,11 +12,13 @@
 // `email` value and use that to store on a `this.username` property.
 
 class Person{
-    constructor(name,email);
+    constructor(name, email){
     this.name = name;
     this.email = email;
     this.username = email.split('@')[0];
+    }
 }
+
 
 // TODO: Create another class that extends the `Person` class called `Student`.
 // The `Student` class should add a line to the `constructor()` method that sets
@@ -26,10 +28,11 @@ class Person{
 // `constructor()` method from the `Person` class.)
 //
 
-class Student extends Person{
-    constructor(name,email){
+class student extends Person{
+    constructor(name, email){
     super(name,email);
     this.attendance=[];
+    }   
 }
 
 // TODO: Create another method on the `Student` class called `calculateAttendance`.
@@ -43,6 +46,14 @@ class Student extends Person{
 // TODO: Create another class that extends the `Person` class called `Teacher`.
 // The `Teacher` class should add a property called `this.honorific` (supplied
 // when an instance of `Teacher` is created).
+
+class Teacher extends Person{
+    constructor(name, email, honorific){
+    super(name, email);   
+    this.honorific = honorific;
+    }
+}
+
 
 
 // TODO: Set up our Course class so we can run the whole roster from it.
@@ -65,6 +76,14 @@ class Course {
     // to update the roster display by calling `updateRoster()`. You will need
     // to reference the Class instance using `this` as a parameter for
     // `updateRoster()`, so it might look like this: `updateRoster(this)`.
+    
+    addStudents(){
+        let name = prompt('Enter your full name:');
+        let email = prompt('Enter your school email:');
+        let student = new Student(name, email);
+        this.students.push(newStudent);
+        updateRoster(this);
+    }
 
 
     /////////////////////////////////////////
@@ -74,6 +93,14 @@ class Course {
     // Create a method called `setTeacher()` that prompts the user for the
     // information required to create a `Teacher` object (`name`, `email`) and
     // does so, then sets the `this.teacher` property equal to the new `Teacher` object.
+    
+    setTeacher(){
+        let name = prompt('Teachers Full Name');
+        let email = prompt('Teachers school email:');
+        let honorific = prompt('Teachers Title (e.g. Dr., Prof., Mr., Ms.');
+        this.teacher = new Teacher(name, email, honorific);
+        updateRoster(this);
+    }
 
 
     /////////////////////////////////////////
@@ -121,7 +148,7 @@ class Course {
 //
 // TODO: Prompt the user for the `courseCode` (the number/code of the course, like "WATS 3000").
 
-let courseCode = prompt('Enter the course number:','TEST 3000');
+let courseCode = prompt('Enter the course number (e.g. WATS 3020)','TEST 3000');
 
 // TODO: Prompt the user for the `courseTitle` (the name of the course, like "Introduction to JavaScript").
 
