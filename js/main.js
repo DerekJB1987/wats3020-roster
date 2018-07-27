@@ -11,7 +11,7 @@
 // method should also break the username from before the `@` symbol in the
 // `email` value and use that to store on a `this.username` property.
 
-class Person{
+class Person {
     constructor(name, email){
     this.name = name;
     this.email = email;
@@ -28,12 +28,12 @@ class Person{
 // `constructor()` method from the `Person` class.)
 //
 
-class student extends Person{
-    constructor(name, email){
-    super(name,email);
-    this.attendance=[];
+class Student extends Person {
+    constructor(name, email) {
+        super(name,email);
+        this.attendance=[];
     }   
-}
+
 
 // TODO: Create another method on the `Student` class called `calculateAttendance`.
 // This method should give a percentage of how many days the student was present.
@@ -41,6 +41,22 @@ class student extends Person{
 // recorded into an Array using either a `0` for "absent" or a `1` for "present".
 // This should allow attendance percentage to be calculated as the average of
 // all the items in the `attendance` Array.
+
+    calculateAttendance(){
+        if (this.attendance.length > 0) {
+            let counter = 0;
+            for (let mark of this.attendance){
+                counter = counter + mark;
+            }
+            let attendancePercentage = counter / this.attendance.length * 100;
+            return '${attendancePercentage}%';
+        } else {
+            return "0%";
+        }
+    }
+}
+
+
 
 
 // TODO: Create another class that extends the `Person` class called `Teacher`.
@@ -53,7 +69,6 @@ class Teacher extends Person{
     this.honorific = honorific;
     }
 }
-
 
 
 // TODO: Set up our Course class so we can run the whole roster from it.
@@ -77,10 +92,10 @@ class Course {
     // to reference the Class instance using `this` as a parameter for
     // `updateRoster()`, so it might look like this: `updateRoster(this)`.
     
-    addStudents(){
+    addStudent(){
         let name = prompt('Enter your full name:');
         let email = prompt('Enter your school email:');
-        let student = new Student(name, email);
+        let newStudent = new Student(name, email);
         this.students.push(newStudent);
         updateRoster(this);
     }
