@@ -171,15 +171,15 @@ class Course {
 //
 // TODO: Prompt the user for the `courseCode` (the number/code of the course, like "WATS 3000").
 
-let courseCode = prompt('Enter the course number (e.g. WATS 3020)','TEST 3000');
+let courseCode = prompt('Enter the course number (e.g. WATS 3020)');
 
 // TODO: Prompt the user for the `courseTitle` (the name of the course, like "Introduction to JavaScript").
 
-let courseTitle = prompt('Enter the name of the course:','Intro to JavaScript');
+let courseTitle = prompt('Enter the name of the course:');
 
 // TODO: Prompt the user for the  `courseDescription` (the descriptive summary of the course).
 
-let courseDescription = prompt('Enter a description of the course:','Easy A for students');
+let courseDescription = prompt('Enter a description of the course:');
 
 // Create a new `Course` object instance called `myCourse` using the three data points just collected from the user.
 // TODO: Add in the values for the information supplied by the user above.
