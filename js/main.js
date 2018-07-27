@@ -136,9 +136,17 @@ class Course {
     // TODO: Now that we have retrieved the specific `Student` object we want
     // to work with, we can use the appropriate method on the `Student` object
     // to record the attendance.
-
-
-
+    
+    markAttendance(username, status='present'){
+        let student = this.findStudent(username);
+        if (status === 'present'){
+            student.attendance.push(1);   
+        } else {
+            student.attendance.push(0);
+        }
+        updateRoster(this);
+    }
+        
     //////////////////////////////////////////////
     // Methods provided for you -- DO NOT EDIT /////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
