@@ -6,7 +6,6 @@
 // Fill in the blanks below to complete each TODO task.                       //
 ////////////////////////////////////////////////////////////////////////////////
 
-// TODO: 
 // 1. Create a base class called `Person` that takes the parameters `name`and `email` 
 // and makes those available as attributes. 
 // 2. The `constructor()`method should break the username before the `@` symbol in the
@@ -20,8 +19,6 @@ class Person {
     }
 }
 
-
-// TODO: 
 // 1. Create another class that extends the `Person` class called `Student`.
 // The `Student` class should add a line to the `constructor()` method that sets
 // the property `this.attendance` to an empty Array (`[ ]`). 
@@ -34,8 +31,7 @@ class Student extends Person {
     }   
 
 
-// TODO: 
-// 1. Create another method on the `Student` class called `calculateAttendance`.
+// Create another method on the `Student` class called `calculateAttendance`.
 // This method should give a percentage of how many days the student was present.
 // Attendance should be recorded into an Array using either a `0` for "absent" or a `1` for "present".
 
@@ -54,9 +50,6 @@ class Student extends Person {
 }
 
 
-
-
-// TODO: 
 // 1. Create another class that extends the `Person` class called `Teacher`.
 // The `Teacher` class should add a property called `this.honorific` (supplied
 // when an instance of `Teacher` is created).
@@ -69,7 +62,7 @@ class Teacher extends Person{
 }
 
 
-// TODO: Set up our Course class so we can run the whole roster from it.
+// Set up our Course class so we can run the whole roster from it.
 class Course {
     constructor(courseCode, courseTitle, courseDescription){
         this.code = courseCode;
@@ -83,10 +76,9 @@ class Course {
     // TODO: ADD the `addStudent()` method /////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
     //
-    // 1. Create a method called `addStudent()` that prompts the user for
+    // Create a method called `addStudent()` that prompts the user for
     // information required to create a new `Student` object (`name`, `email`)
-    // and does so, then adds the student to the `this.students` Array. Be sure
-    // to update the roster display by calling `updateRoster()`.
+    // and does so, then adds the student to the `this.students` Array.
     
     addStudent(){
         let name = prompt('Enter your full name:');
@@ -101,7 +93,7 @@ class Course {
     // TODO: ADD the `setTeacher()` method /////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
     //
-    // 1. Create a method called `setTeacher()` that prompts the user for the
+    // Create a method called `setTeacher()` that prompts the user for the
     // information required to create a `Teacher` object (`name`, `email`) and
     // does so, then sets the `this.teacher` property equal to the new `Teacher` object.
     
@@ -118,12 +110,10 @@ class Course {
     // TODO: ADD `markAttendance()` method /////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
     //
-    // TODO: 
     // 1. Create a method to mark a student's attendance called `markAttendance()`.
     // This method should accept a parameter called `username` containing the
     // `username` that will match the `username` property on the `Student` object.
 
-    // TODO: 
     // 2. Now that we have retrieved the specific `Student` object we want
     // to work with, we can use the appropriate method on the `Student` object
     // to record the attendance.
